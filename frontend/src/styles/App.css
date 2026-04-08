@@ -1,0 +1,39 @@
+.app {
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    margin: 0;
+    font-size: 22px;
+  }
+  
+  .nav a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .nav a:last-child {
+    margin-right: 0;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .main {
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
