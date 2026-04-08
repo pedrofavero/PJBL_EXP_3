@@ -1,23 +1,35 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import '../styles/ListaCarros.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function ListaCarros() {
   const [carros, setCarros] = useState([]);
   const [erro, setErro] = useState('');
-  const [mensagem] = useState('');
+  const [mensagem, setMensagem] = useState('');
+  const navigate = useNavigate();
 
   const buscarCarros = () => {
     api.get('/carros')
       .then((res) => {
         setCarros(res.data);
       })
-      .catch(() => setErro('Erro ao carregar carros.'));
+      .catch(() => setErro('Erro ao carregar carros'));
   };
 
   useEffect(() => {
     buscarCarros();
   }, []);
+
+  const deletar = (id) =>{
+    api.delete(`/carros/${id}`).then(() =>{
+      setMensagem('Carro excluído com sucesso');
+      buscarCarros();
+      setTimeout(() => setMensagem(''), 3000);
+    }).catch(() => setErro('Erro ao deletar carro'))
+  }
 
   return (
     <div className="container">
@@ -42,7 +54,7 @@ function ListaCarros() {
           {carros.length === 0 ? (
             <tr>
               <td colSpan="7" className="vazio">
-                Nenhum carro cadastrado.
+                Nenhum carro
               </td>
             </tr>
           ) : (
@@ -55,9 +67,9 @@ function ListaCarros() {
                 <td>{carro.cor}</td>
                 <td>R$ {parseFloat(carro.preco).toFixed(2)}</td>
                 <td>
-                  <button className="btn btn-ver">Ver</button>
-                  <button className="btn btn-editar">Editar</button>
-                  <button className="btn btn-deletar">Excluir</button>
+                  <button onClick={() => navigate(`/detalhes/${carro.id}`)} className='btn-ver'>Ver</button>
+                  <button onClick={() => navigate(`/editar/${carro.id}`)} className='btn-editar'>Editar</button>
+                  <button onClick={() => deletar(carro.id)} className='btn-deletar'>Excluir</button>
                 </td>
               </tr>
             ))
