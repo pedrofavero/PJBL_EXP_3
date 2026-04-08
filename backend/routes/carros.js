@@ -1,10 +1,10 @@
 import express from "express";
-
+import carroController from "../controllers/carrosController.js";
 const router = express.Router();
 
 
-// arrumar as rotas depois pra apssar funcao do controller   
-// router.get('/', 'listar');
+
+router.get('/', carroController.listar);
 // router.get('/:id', 'buscarPorId');
 // router.post('/', 'criar');
 // router.put('/:id', 'atualizar');
