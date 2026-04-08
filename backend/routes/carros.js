@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 router.get('/', carroController.listar);
-// router.get('/:id', 'buscarPorId');
+router.get('/:id', carroController.buscarPorId);
 // router.post('/', 'criar');
 // router.put('/:id', 'atualizar');
 router.delete('/:id', carroController.deletar);
