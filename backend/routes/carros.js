@@ -8,6 +8,6 @@ router.get('/', carroController.listar);
 // router.get('/:id', 'buscarPorId');
 // router.post('/', 'criar');
 // router.put('/:id', 'atualizar');
-// router.delete('/:id', 'deletar');
+router.delete('/:id', carroController.deletar);
 
 export default router;
