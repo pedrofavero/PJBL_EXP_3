@@ -10,4 +10,6 @@ app.use(express.json());
 
 app.use('/carros', carrosRoutes);
 
-app.listen(porta);
+app.listen(porta, () => {
+    console.log(`Servidor rodando na porta ${porta}`);
+});
