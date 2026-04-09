@@ -85,9 +85,34 @@ npm start
 | Terminal 1 (backend) | `cd backend` → `npm install` → `node index.js` |
 | Terminal 2 (frontend) | `cd frontend` → `npm install` → `npm start` |
 
+---
 
+## Como o sistema funciona
 
+### Tela de Listagem de Veículos
+Tela inicial do sistema. Exibe todos os veículos cadastrados no banco de dados em uma tabela com as colunas ID, Marca, Modelo, Ano, Cor e Preço. Cada linha possui três botões de ação: **Ver**, **Editar** e **Excluir**. No topo da tela possui um botao para ir para tela de **Cadastrar**.
 
-## Video Explicativo do Sistema e Código
+---
+
+### Tela de Visualização de Veículo
+Acessada ao clicar em **Ver** na listagem. Exibe todas as informações detalhadas do veículo selecionado em formato de tabela. Possui botões para **Editar** o veículo ou **Voltar** para a listagem.
+
+---
+### Adicionar Veículo
+Acessada pelo botão **Cadastrar** no menu superior. Exibe um formulário com os campos Marca, Modelo, Ano, Cor e Preço. Após preencher e confirmar, o veículo é salvo no banco de dados e o sistema redireciona para a listagem.
+
+---
+
+### Editar Veículo
+Acessada ao clicar em **Editar** na listagem ou na tela de detalhes. O formulário é carregado já preenchido com os dados atuais do veículo. Após salvar, as alterações são atualizadas no banco de dados.
+
+---
+
+### Excluir Veículo
+Ao clicar em **Excluir** na listagem, uma janela de confirmação é exibida perguntando se deseja realmente excluir o veículo. Ao confirmar, o registro é removido do banco de dados e a listagem é atualizada automaticamente.
+
+---
+
+## Vídeo Explicativo do Sistema e Código
 
 **https://www.youtube.com/watch?v=uSoSmi_Mnlk**
