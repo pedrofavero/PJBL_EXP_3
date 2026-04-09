@@ -20,7 +20,6 @@ const deletar = (payload, res) => {
     }
 
     if (result.affectedRows === 0) {
-      console.log("caiu aqui")
       return res.status(404).json({ erro: 'Carro não encontrado.' });
     }
 
