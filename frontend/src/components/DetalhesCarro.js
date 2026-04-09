@@ -12,7 +12,7 @@ function DetalhesCarro() {
   useEffect(() => {
     api.get(`/carros/${id}`)
       .then((res) => setCarro(res.data))
-      .catch(() => setErro('arro não encontrado'));
+      .catch(() => setErro('carro não encontrado'));
   }, [id]);
 
   if (erro) return <p className="erro">{erro}</p>;
