@@ -84,3 +84,10 @@ npm start
 |---|---|
 | Terminal 1 (backend) | `cd backend` → `npm install` → `node index.js` |
 | Terminal 2 (frontend) | `cd frontend` → `npm install` → `npm start` |
+
+
+
+
+## Video Explicativo do Sistema e Código
+
+**https://www.youtube.com/watch?v=uSoSmi_Mnlk**
